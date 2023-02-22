@@ -1,5 +1,5 @@
 # 
-# <https://github.com/KFERMercer/OpenWrt-CI> 
+# <https://github.com/KFERMercer/OpenWrt-CI>
 #
 # Copyright (C) 2019 P3TERX
 #
@@ -8,11 +8,13 @@
 name: OpenWrt-CI
 
 on:
-  schedule:
-    - cron: 0 20 * * *
-
-permissions:
-  contents: read
+  push:
+    branches: 
+      - master
+  # schedule:
+  #   - cron: 0 20 * * *
+  release:
+    types: [published]
 
 jobs:
 
@@ -23,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Space cleanup and Initialization environment1
+      - name: Space cleanup and Initialization environment
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
