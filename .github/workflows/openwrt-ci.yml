@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Space cleanup and Initialization environment
+      - name: Space cleanup and Initialization environment1
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
